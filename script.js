@@ -84,13 +84,15 @@
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-target');
+      if (!targetId) return;
+
       // Deactivate all
       tabs.forEach(t => t.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
-      
+
       // Activate clicked
       tab.classList.add('active');
-      const targetId = tab.getAttribute('data-target');
       document.getElementById(targetId).classList.add('active');
       window.scrollTo(0,0);
     });
@@ -439,5 +441,59 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
       if (i < descLines.length - 1) descEl.appendChild(document.createElement('br'));
   }
+});
+
+// --- 8. Highlight Card Sparkle Animation ---
+document.addEventListener('DOMContentLoaded', () => {
+  const card = document.querySelector('.catalog-item.highlight-card');
+  if (!card) return;
+
+  const sparkleContainer = document.createElement('div');
+  sparkleContainer.style.cssText = 'position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2;border-radius:16px;';
+  card.appendChild(sparkleContainer);
+
+  function createSparkle() {
+    const s = document.createElement('div');
+    const size = Math.random() * 6 + 2;
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const duration = Math.random() * 1.5 + 0.8;
+    const colors = ['#ffd700', '#fff8dc', '#ffec8b', '#ffa500', '#ffffff', '#ffe4b5'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    s.style.cssText = `
+      position:absolute;
+      left:${x}%;
+      top:${y}%;
+      width:${size}px;
+      height:${size}px;
+      background:${color};
+      border-radius:50%;
+      box-shadow:0 0 ${size * 2}px ${color}, 0 0 ${size * 4}px ${color};
+      animation:sparkle-anim ${duration}s ease-in-out forwards;
+      pointer-events:none;
+    `;
+    sparkleContainer.appendChild(s);
+    setTimeout(() => s.remove(), duration * 1000);
+  }
+
+  // Add sparkle keyframes dynamically
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = `
+    @keyframes sparkle-anim {
+      0% { opacity:0; transform:scale(0) rotate(0deg); }
+      30% { opacity:1; transform:scale(1.2) rotate(90deg); }
+      70% { opacity:0.8; transform:scale(0.8) rotate(180deg); }
+      100% { opacity:0; transform:scale(0) rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(styleSheet);
+
+  // Continuously spawn sparkles
+  setInterval(() => {
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => createSparkle(), Math.random() * 300);
+    }
+  }, 400);
 });
 
