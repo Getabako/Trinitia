@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Studio Trinitia</title>
+  <meta name="description" content="事業構想・運営管理ポータル。次世代型スタジオの教育価値とビジネスモデルを提示します。">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@700;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  <!-- 背景パーティクル等キャンバス -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- ナビゲーションバー -->
+  <nav class="glass-nav" id="topNav">
+    <div class="nav-brand">
+      <span class="brand-tech">FUTURE</span><span class="brand-active">STUDIO</span>
+      <span class="brand-sub">TRINITIA</span>
+    </div>
+    
+    <div class="nav-tabs" id="mainTabs">
+      <button class="nav-tab active" data-target="view-dashboard">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Ideation</span>
+      </button>
+      <button class="nav-tab" data-target="view-tasks">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Tasks</span>
+      </button>
+      <button class="nav-tab" data-target="view-equipment">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="2"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Equipment</span>
+      </button>
+    </div>
+    
+    <button class="mobile-toggle" id="mobileToggle" aria-label="モバイルメニュー連携">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- コンテンツ領域 -->
+  <main class="main-container">
+
+    <!-- ============================================== -->
+    <!-- VIEW: 1. Dashboard (Ideation & Presentation) -->
+    <!-- ============================================== -->
+    <section id="view-dashboard" class="view-section active">
+      
+      <!-- HERO -->
+      <div class="hero flex-center" style="background-image: url('images/hero_main_bg.png');">
+        <div class="hero-overlay"></div>
+        <div class="glass-card hero-content text-center stagger-anim" style="padding: 3rem;">
+          <p class="hero-tagline">NEXT-GEN CREATOR STUDIO</p>
+          <h1 class="hero-title">
+            <span class="gradient-tech">創る</span> と <span class="gradient-sports">動く</span> で<br>
+            未来を切り拓く
+          </h1>
+          <p class="hero-desc">テクノロジー教育 × 脳科学スポーツ × マネタイズ実践。<br>これからの時代を生き抜く「起業家精神」と「生きる力」を、秋田から世界へ発信します。</p>
+          <a href="#vision" class="btn btn-glow mt-2">BUSINESS VISION を見る</a>
+        </div>
+        <div class="scroll-indicator">
+          <span>SCROLL</span>
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <!-- VISION: Core Values -->
+      <div class="container section-padding" id="vision">
+        <div class="section-header text-center mb-4">
+          <h2 class="h2-cyber">BUSINESS MODEL & VALUES</h2>
+          <p class="text-muted">パートナー様へご提案する「3つの柱」の確かなシナジー</p>
+        </div>
+        
+        <!-- SECTION 1: TECH -->
+        <div class="overlay-layout mb-4">
+          <div class="overlay-item">
+            <div class="overlay-img-wrapper">
+              <!-- Using the glob to reference the latest generated image name without needing the exact timestamp suffix. I'll just use wildcard via proxy or exact name by finding it. Wait, I copied jp_main_tech_1775290273716.png to images/ without stripping suffix. 
+              Let's run a small script to copy with strict names, or just use what I have. But I used 'jp_*.png'. I can just reference the base name if there's only one, wait, HTML doesn't resolve globs. I should rename them cleanly. -->
+            </div>
+            <div class="overlay-panel">
+              <div class="value-icon glow-tech mb-3">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="gradient-tech">1. 最先端テクノロジー (Vibe Coding)</h3>
+              <p class="mb-2">プログラミングの文法を丸暗記させる旧来の教育は行いません。当スタジオでは、<strong>「MCP (Model Context Protocol)」と「ClaudeCode」</strong>等の最新AIツールをバックエンドに接続し、子どもたちが「要望をAIに伝えるだけ」でシステムが組み上がる『Vibe Coding』の圧倒的ワークフローを提供します。</p>
+              <p>想像したものを形にするアプローチを最速で体験させ、AIの効果的・倫理的な使い方も同時に学ばせます。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>

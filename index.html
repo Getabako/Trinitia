@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Studio Trinitia</title>
+  <meta name="description" content="事業構想・運営管理ポータル。次世代型スタジオの教育価値とビジネスモデルを提示します。">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@700;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  <!-- 背景パーティクル等キャンバス -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- ナビゲーションバー -->
+  <nav class="glass-nav" id="topNav">
+    <div class="nav-brand">
+      <span class="brand-tech">FUTURE</span><span class="brand-active">STUDIO</span>
+      <span class="brand-sub">TRINITIA</span>
+    </div>
+    
+    <div class="nav-tabs" id="mainTabs">
+      <div class="nav-dropdown">
+        <button class="nav-tab active" data-target="view-dashboard">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" stroke="currentColor" stroke-width="2"/></svg>
+          <span>コアバリュー</span>
+        </button>
+        <div class="dropdown-content">
+          <a href="index.html#tech-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click()">最先端テクノロジー</a>
+          <a href="index.html#sports-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click()">スポーツ・息抜き</a>
+          <a href="index.html#biz-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click()">マネタイズ実践</a>
+        </div>
+      </div>
+
+      <button class="nav-tab" onclick="document.querySelector('[data-target=\'view-dashboard\']').click(); setTimeout(()=>{ var el=document.getElementById('roadmap'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 200);">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>今後の展望</span>
+      </button>
+
+      <button class="nav-tab" data-target="view-tasks">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>タスク管理</span>
+      </button>
+
+      <button class="nav-tab" data-target="view-equipment">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 7h-4V3H8v4H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM8 3h8v4H8V3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>備品管理</span>
+      </button>
+    </div>
+    
+    <button class="mobile-toggle" id="mobileToggle" aria-label="モバイルメニュー連携">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- コンテンツ領域 -->
+  <main class="main-container">
+
+    <!-- ============================================== -->
+    <!-- VIEW: 1. Dashboard (Ideation & Presentation) -->
+    <!-- ============================================== -->
+    <section id="view-dashboard" class="view-section active">
+      
+      <!-- HERO -->
+      <div class="hero flex-center" style="background-image: url('images/top.jpeg');">
+        <div class="hero-overlay"></div>
+        <div class="glass-card hero-content text-center stagger-anim" style="padding: 3rem;">
+          <p class="hero-tagline">NEXT-GEN CREATOR STUDIO</p>
+          <h1 class="hero-title" id="anim-hero-title" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); line-height: 1.3; min-height: 3em;"></h1>
+          <p class="hero-desc" id="anim-hero-desc" style="min-height: 3em;"></p>
+          <a href="#vision" class="btn btn-glow mt-2">BUSINESS VISION を見る</a>
+        </div>
+        <div class="scroll-indicator">
+          <span>SCROLL</span>
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <!-- VISION: Core Values -->
+      <div class="container section-padding" id="vision">
+        
+        <!-- SECTION 1: TECH -->
+        <div class="theme-wrapper" data-bg="#bfdbfe" style="padding: 2rem 0; border-radius: 20px;">
+          <div class="overlay-layout mb-4">
+            <div class="overlay-item">
+              <div class="overlay-img-wrapper">
+                <img src="images/jp_main_tech.png" alt="最先端テクノロジー" class="glow-img">
+              </div>
+              <div class="overlay-panel">
+                <div class="value-icon glow-tech mb-3">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3 class="gradient-tech">1. 最先端テクノロジー (Vibe Coding)</h3>
+                <p class="mb-2">プログラミングの文法を丸暗記させる旧来の教育は行いません。当スタジオでは、<strong>「MCP (Model Context Protocol)」と「ClaudeCode」</strong>等の最新AIツールをバックエンドに接続し、子どもたちが「要望をAIに伝えるだけ」でシステムが組み上がる『Vibe Coding』の圧倒的ワークフローを提供します。</p>
+                <p>想像したものを形にするアプローチを最速で体験させ、AIの効果的・倫理的な使い方も同時に学ばせます。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-section" id="tech-catalog">
+            <h4 class="text-center mb-3">【実現可能な学習・開発領域】</h4>
+            <div class="catalog-grid justify-center">
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_tech_roblox.png" alt="Roblox/Minecraft"></div>
+                <h4><span class="badge-tech">Game</span> Roblox / Minecraft</h4>
+                <p>MCPを通じゲーム内APIやMod環境をClaudeCodeに解析させ、「こんなルールにしたい」とAIに話すだけでLuaやJavaコードを生成・配置。遊びながらアルゴリズムの基礎を学びます。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_tech_unity.png" alt="Unity"></div>
+                <h4><span class="badge-tech">3D</span> Unity</h4>
+                <p>本格的な3Dエンジンも、C#スクリプトや物理演算処理の雛形をAIがサポート。複雑なデプロイ処理もClaudeコマンド経由で自動化し、クリエイティビティに集中させます。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_tech_app.png" alt="HP/App"></div>
+                <h4><span class="badge-tech">Dev</span> HP・アプリ開発</h4>
+                <p>Vercel等の環境と連携するMCPを用意し、要件定義からデプロイまで一気通貫。自営業の親のお店のHPを作るなど、実社会の課題解決をAIと共に行います。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_tech_db.png" alt="DB/API"></div>
+                <h4><span class="badge-tech">Data</span> DB・API連携</h4>
+                <p>Supabase等のデータベースと各種APIをMCPで接続。データ構造の設計やバックエンド処理など、大人顔負けのシステム構築の裏側をAI経由で体感・習得させます。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_tech_gfx.png" alt="Creative"></div>
+                <h4><span class="badge-tech">Media</span> グラフィック・3DCG・動画編集</h4>
+                <p>画像生成AIによる素材作成や動画の自動カット編集を活用。さらに、画面内のデータを3Dプリンタやレーザーカッターで「物理的な形」にするFab体験も提供します。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_tech_sns.png" alt="Marketing"></div>
+                <h4><span class="badge-tech">Marke</span> SNS・ブログ・eスポーツ指導</h4>
+                <p>AIを活用したブログ集客やSNSインサイト分析を実践。また、eスポーツのプレイ動画をAIに分析させ、チームの戦略立てやコーチングなど論理的思考力を養います。</p>
+              </div>
+              <div class="catalog-item highlight-card">
+                <div class="img-wrapper"><img src="images/jp_tech_startup.png" alt="Entrepreneurship"></div>
+                <div class="card-content">
+                  <h4><span class="badge-tech">Startup</span> 起業・自己実現</h4>
+                  <p>ただ作るだけでなく、それをどう社会に役立てるか。自らが見つけた「好き」でプロダクトを作り、それを堂々とプレゼンテーションして、自信を持って世界へ発信するアントレプレナー精神の終着点です。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <!-- SECTION 2: SPORTS -->
+        <div class="theme-wrapper" data-bg="#fdba74" style="padding: 2rem 0; border-radius: 20px;">
+          <div class="overlay-layout mt-2 mb-4">
+            <div class="overlay-item reverse">
+              <div class="overlay-img-wrapper">
+                <img src="images/jp_main_sports.png" alt="スポーツ・息抜き" class="glow-img">
+              </div>
+              <div class="overlay-panel">
+                <div class="value-icon glow-sports mb-3">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3 class="gradient-sports">2. スポーツ・息抜き (脳科学的アプローチ)</h3>
+                <p class="mb-3">PC作業による座りっぱなしや依存を防ぎ、「脳をリフレッシュし、地頭を良くする」ための革新的なスポーツプログラムを取り入れます。プロアスリートも利用する最先端機器を導入します。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-section" id="sports-catalog">
+            <div class="catalog-grid grid-2">
+              <div class="catalog-item">
+                <div class="img-wrapper" style="height: 220px;"><img src="images/jp_sports_vision.png" alt="ビジョントレーニング"></div>
+                <h4><span class="badge-sports">Cognitive</span> ビジョントレーニングボード</h4>
+                <p>ランダムに光るボタンを素早くタッチして消していくことで、周辺視野、動体視力、瞬間的な判断力を鍛え、脳のワーキングメモリを拡張させます。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper" style="height: 220px;"><img src="images/jp_sports_boulder.png" alt="ARサイバーボルダリング"></div>
+                <h4><span class="badge-sports">Physical</span> ARサイバー・ボルダリング</h4>
+                <p>プロジェクションマッピングで映し出された光や数字を追いかけて登る最新型スポーツ。状況判断と瞬発的な全身運動を同時に行い脳を極限まで活性化させます。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper" style="height: 220px;"><img src="images/jp_sports_ball.png" alt="サイバー球技"></div>
+                <h4><span class="badge-sports">Team</span> サイバー球技アリーナ</h4>
+                <p>光るボールと床を使った近未来のチームスポーツ。仲間と協調して行うチームビルディング、持続的な注意力と集中力、微細運動能力を大きく向上させます。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <!-- SECTION 3: BIZ -->
+        <div class="theme-wrapper" data-bg="#fde047" style="padding: 2rem 0; border-radius: 20px;">
+          <div class="overlay-layout mt-2 mb-4">
+            <div class="overlay-item">
+              <div class="overlay-img-wrapper">
+                <img src="images/jp_main_biz.png" alt="マネタイズ実践" class="glow-img">
+              </div>
+              <div class="overlay-panel">
+                <div class="value-icon glow-biz mb-3">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 20V10M18 20V4M6 20v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3 class="gradient-biz">3. ビジネス・マネタイズ実践</h3>
+                <p class="mb-3">学んだスキルは「おままごと」で終わらせず、シームレスに「マネタイズ（収益化）」まで繋げて社会との繋がりを実感させます。教室という安全な環境内で、起業家精神（アントレプレナーシップ）の圧倒的実践を行います。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-section" id="biz-catalog">
+            <div class="catalog-grid">
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_biz_dagashiya.png" alt="駄菓子屋"></div>
+                <h4><span class="badge-biz">Retail</span> サイバー駄菓子屋 (生徒経営)</h4>
+                <p>教室内にある駄菓子屋を生徒たちが仕入れ〜販売まで独自に運営。自作したタブレットPOSレジや在庫システムを稼働させ、現代版レモネードスタンドとして商売の基本を学びます。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_biz_stream.png" alt="配信スタジオ"></div>
+                <h4><span class="badge-biz">Media</span> YouTube・動画配信スタジオ</h4>
+                <p>プロフェッショナルなマイクやグリーンバック環境を開放。自分たちの作ったゲームの実況や、商品の宣伝動画の企画・撮影・編集を行い、ファンマーケティングのリアルを実践します。</p>
+              </div>
+              <div class="catalog-item">
+                <div class="img-wrapper"><img src="images/jp_biz_d2c.png" alt="商品開発"></div>
+                <h4><span class="badge-biz">D2C</span> 商品開発・システム受託</h4>
+                <p>3Dプリンタで作ったオリジナルガジェット等の物販や、LINEミニアプリなどの業務改善システムを地域店舗などへ実際に提供・販売してみるプロセスを指導します。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <!-- SECTION 4: ROADMAP -->
+        <div class="theme-wrapper" data-bg="#d8b4fe" style="padding: 2rem 0; border-radius: 20px;">
+          <div class="section-header text-center mt-4 mb-4" id="roadmap">
+            <h2 class="h2-cyber">今後の展望 (Roadmap)</h2>
+            <p class="text-muted">教育×地域課題解決の新しいモデル構築へ</p>
+          </div>
+          
+          <div class="catalog-grid" style="gap: 1.5rem;">
+            <div class="catalog-item glass-card text-center" style="padding: 2rem;">
+              <h3 class="gradient-tech" style="font-size:1.5rem">Phase 0</h3>
+              <h4 class="mb-2">教室開設・基盤構築</h4>
+              <p class="text-muted" style="font-size:0.9rem">事業計画策定、物件選定、<br>ホームページ制作、認知活動（現在）</p>
+            </div>
+            <div class="catalog-item glass-card text-center" style="padding: 2rem;">
+              <h3 class="gradient-sports" style="font-size:1.5rem">Phase 1</h3>
+              <h4 class="mb-2">次世代型・学童への展開</h4>
+              <p class="text-muted" style="font-size:0.9rem">共働き世帯の課題解決。<br>単なる預かりではなく「スキルが身につく学童」として機能。</p>
+            </div>
+            <div class="catalog-item glass-card text-center" style="padding: 2rem;">
+              <h3 class="gradient-tech" style="font-size:1.5rem">Phase 2</h3>
+              <h4 class="mb-2">「出席扱い」拠点の確立</h4>
+              <p class="text-muted" style="font-size:0.9rem">学校の新しい学びの場。<br>ITを活用し学習履歴を可視化、校長連携フローの構築。</p>
+            </div>
+            <div class="catalog-item glass-card text-center" style="padding: 2rem;">
+              <h3 class="gradient-biz" style="font-size:1.5rem">Phase 3</h3>
+              <h4 class="mb-2">教育 × M&Aモデル</h4>
+              <p class="text-muted" style="font-size:0.9rem">地域経済の担い手育成。<br>廃業危機の老舗店舗とのコラボや事業承継を通じた教育拡張。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- VIEW: 2. Tasks Management -->
+    <!-- ============================================== -->
+    <section id="view-tasks" class="view-section">
+      <div class="container section-padding">
+        
+        <div class="dashboard-header flex-between mb-3">
+          <div>
+            <h2 class="h2-cyber">TASKS <span class="text-muted text-sm">| 準備状況</span></h2>
+            <p class="text-muted">事業構想をリアルタイムに実行するタスク一覧</p>
+          </div>
+          <div class="dashboard-stats" id="taskStatsArea">
+            <div class="stat-box"><span id="t-total" class="num">0</span><span class="label">TOTAL</span></div>
+            <div class="stat-box"><span id="t-done" class="num text-success">0</span><span class="label">DONE</span></div>
+            <div class="stat-box"><span id="t-prog" class="num text-warning">0</span><span class="label">DOING</span></div>
+          </div>
+        </div>
+
+        <div class="add-bar mb-4 glass-card" style="padding: 1.5rem; border-radius: 12px;">
+          <input type="text" id="t-name" class="cyber-input long-input" placeholder="タスク名を入力...">
+          <select id="t-cat" class="cyber-select">
+            <option value="事業準備">事業準備</option>
+            <option value="集客・マーケティング">集客・マーケティング</option>
+            <option value="カリキュラム">カリキュラム</option>
+            <option value="人材">人材</option>
+            <option value="法務・許認可">法務・許認可</option>
+          </select>
+          <select id="t-pri" class="cyber-select short-input">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <button class="btn btn-glow" id="t-add-btn">ADD TASK</button>
+        </div>
+
+        <div class="filter-tabs mb-3" id="t-filters">
+          <button class="filter-tab active" data-filter="all">ALL</button>
+          <button class="filter-tab" data-filter="事業準備">事業</button>
+          <button class="filter-tab" data-filter="集客・マーケティング">集客</button>
+          <button class="filter-tab" data-filter="カリキュラム">教育</button>
+          <button class="filter-tab" data-filter="人材">人材</button>
+          <button class="filter-tab" data-filter="法務・許認可">法務</button>
+        </div>
+
+        <div class="custom-scroll drag-container" id="taskListContainer">
+          <!-- Tasks will be rendered here by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- VIEW: 3. Equipment Management -->
+    <!-- ============================================== -->
+    <section id="view-equipment" class="view-section">
+      <div class="container section-padding">
+        
+        <div class="dashboard-header flex-between mb-3">
+          <div>
+            <h2 class="h2-cyber">EQUIPMENT <span class="text-muted text-sm">| 投資・備品調達</span></h2>
+            <p class="text-muted">事業の要となる設備・機材の必要性と調達状況</p>
+          </div>
+          <div class="dashboard-stats" id="equipStatsArea">
+            <div class="stat-box"><span id="e-total" class="num">0</span><span class="label">TOTAL</span></div>
+            <div class="stat-box"><span id="e-acq" class="num text-success">0</span><span class="label">GOT</span></div>
+            <div class="stat-box"><span id="e-ord" class="num text-warning">0</span><span class="label">ORD</span></div>
+            <div class="stat-box"><span id="e-need" class="num text-danger">0</span><span class="label">NEED</span></div>
+          </div>
+        </div>
+
+        <div class="add-bar mb-4 glass-card" style="padding: 1.5rem; border-radius: 12px;">
+          <input type="text" id="e-name" class="cyber-input" placeholder="備品名...">
+          <select id="e-cat" class="cyber-select">
+            <option value="IT機器">IT機器</option>
+            <option value="デジタルファブリケーション">デジタルファブ</option>
+            <option value="スタジオ・eスポーツ">スタジオ/eスポーツ</option>
+            <option value="スポーツ・運動">スポーツ/運動</option>
+            <option value="施設・家具">施設/家具</option>
+          </select>
+          <input type="text" id="e-qty" class="cyber-input short-input" placeholder="数量">
+          <input type="text" id="e-reason" class="cyber-input long-input" placeholder="必要性 / 調達理由">
+          <button class="btn btn-glow" id="e-add-btn">ADD EQUIP</button>
+        </div>
+
+        <div class="filter-tabs mb-3" id="e-filters">
+          <button class="filter-tab active" data-filter="all">ALL</button>
+          <button class="filter-tab" data-filter="IT機器">IT</button>
+          <button class="filter-tab" data-filter="デジタルファブリケーション">Fab</button>
+          <button class="filter-tab" data-filter="スタジオ・eスポーツ">Studio</button>
+          <button class="filter-tab" data-filter="スポーツ・運動">Sports</button>
+          <button class="filter-tab" data-filter="施設・家具">Facility</button>
+        </div>
+
+        <div class="table-container custom-scroll">
+          <table class="cyber-table w-100" id="equipTable">
+            <thead>
+              <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th style="width:80px;">Qty</th>
+                <th>Reason (必要性)</th>
+                <th style="width:120px;">Status</th>
+                <th style="width:50px;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="equipListBody">
+              <!-- Equipment rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="terms.html">利用規約</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="law.html">特定商取引法に基づく表記</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Future Studio Trinitia. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
