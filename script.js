@@ -386,16 +386,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   titleEl.innerHTML = '';
   descEl.innerHTML = '';
 
-  // Step 1: Typying 「好き」
+  // Step 1: Typing 「居場所」
   const titlePart1 = document.createElement('span');
-  titlePart1.className = 'gradient-tech';
+  titlePart1.className = 'gradient-hybrid';
   titleEl.appendChild(titlePart1);
-  for(let char of '「好き」') {
+  for(let char of '「居場所」') {
       titlePart1.textContent += char;
       await delay(150);
   }
 
-  // Step 2: 1 by 1 
+  // Step 2: 1 by 1
   const titlePart2 = document.createElement('span');
   titleEl.appendChild(titlePart2);
   for(let char of 'が見つかり、') {
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const titlePart2b = document.createElement('span');
   titleEl.appendChild(titlePart2b);
-  for(let char of '「好き」を自分の') {
+  for(let char of '「好き」が') {
       titlePart2b.textContent += char;
       await delay(80);
   }
@@ -420,10 +420,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   titleEl.appendChild(fireSpan);
   await delay(600);
 
-  // Step 4: Normal "にする。"
+  // Step 4: Normal "になる。"
   const titlePart3 = document.createElement('span');
   titleEl.appendChild(titlePart3);
-  for(let char of 'にする。') {
+  for(let char of 'になる。') {
       titlePart3.textContent += char;
       await delay(80);
   }
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await delay(300);
 
   // Step 5: Desc paragraph
-  const descLines = ["学ぶ、熱狂する、稼ぐ。", "テクノロジーとスポーツを融合し、秋田発・世界基準のクリエイターへ。"];
+  const descLines = ["学童保育の安定した基盤の上に、", "フリースクールの社会的意義を重ね合わせた新しい教育モデル。"];
   for(let i=0; i<descLines.length; i++) {
       const lineSpan = document.createElement('span');
       descEl.appendChild(lineSpan);

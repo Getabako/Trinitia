@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Future Studio Trinitia</title>
-  <meta name="description" content="事業構想・運営管理ポータル。次世代型スタジオの教育価値とビジネスモデルを提示します。">
+  <meta name="description" content="学童保育×フリースクールのハイブリッドモデル。安定した収益基盤と社会的意義を両立する新しい教育モデルを提示します。">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +27,15 @@
       <div class="nav-dropdown">
         <button class="nav-tab active" data-target="view-dashboard">
           <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" stroke="currentColor" stroke-width="2"/></svg>
-          <span>コアバリュー</span>
+          <span>教育コンテンツ</span>
         </button>
         <div class="dropdown-content">
-          <a href="index.html#tech-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click()">最先端テクノロジー</a>
-          <a href="index.html#sports-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click()">スポーツ・息抜き</a>
-          <a href="index.html#biz-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click()">マネタイズ実践</a>
+          <a href="#hybrid-model" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click(); setTimeout(()=>{ var el=document.getElementById('hybrid-model'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 200);">ハイブリッドモデル</a>
+          <a href="#space-design" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click(); setTimeout(()=>{ var el=document.getElementById('space-design'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 200);">空間設計</a>
+          <a href="#pricing" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click(); setTimeout(()=>{ var el=document.getElementById('pricing'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 200);">料金</a>
+          <a href="#tech-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click(); setTimeout(()=>{ var el=document.getElementById('tech-catalog'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 200);">最先端テクノロジー</a>
+          <a href="#sports-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click(); setTimeout(()=>{ var el=document.getElementById('sports-catalog'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 200);">スポーツ・息抜き</a>
+          <a href="#biz-catalog" class="dropdown-item" onclick="document.querySelector('[data-target=\'view-dashboard\']').click(); setTimeout(()=>{ var el=document.getElementById('biz-catalog'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 200);">マネタイズ実践</a>
         </div>
       </div>
 
@@ -69,10 +72,10 @@
       <div class="hero flex-center" style="background-image: url('images/top.jpeg');">
         <div class="hero-overlay"></div>
         <div class="glass-card hero-content text-center stagger-anim" style="padding: 3rem;">
-          <p class="hero-tagline">NEXT-GEN CREATOR STUDIO</p>
+          <p class="hero-tagline">学童保育 × フリースクール HYBRID MODEL</p>
           <h1 class="hero-title" id="anim-hero-title" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); line-height: 1.3; min-height: 3em;"></h1>
           <p class="hero-desc" id="anim-hero-desc" style="min-height: 3em;"></p>
-          <a href="#vision" class="btn btn-glow mt-2">BUSINESS VISION を見る</a>
+          <a href="#hybrid-model" class="btn btn-glow mt-2">HYBRID MODEL を見る</a>
         </div>
         <div class="scroll-indicator">
           <span>SCROLL</span>
@@ -82,7 +85,235 @@
 
       <!-- VISION: Core Values -->
       <div class="container section-padding" id="vision">
-        
+
+        <!-- SECTION 0: HYBRID MODEL -->
+        <div class="theme-wrapper" data-bg="#a7f3d0" style="padding: 2rem 0; border-radius: 20px;" id="hybrid-model">
+          <div class="section-header text-center mt-4 mb-4">
+            <h2 class="h2-cyber gradient-hybrid">HYBRID MODEL</h2>
+            <p class="text-muted">学童保育の安定した基盤の上に、フリースクールの社会的意義を重ね合わせた新しい教育モデル</p>
+          </div>
+
+          <!-- 3つの価値 -->
+          <div class="hybrid-values-grid mb-4">
+            <div class="hybrid-value-card">
+              <div class="hybrid-value-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>収益性</h3>
+              <p>学童保育で安定したキャッシュフローを確保。共働き世帯の需要に応え、持続可能な経営基盤を構築します。</p>
+            </div>
+            <div class="hybrid-value-card">
+              <div class="hybrid-value-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>社会的意義</h3>
+              <p>不登校の子どもたちに「居場所」を提供。学校以外の学びの場として、一人ひとりに寄り添った教育を実現します。</p>
+            </div>
+            <div class="hybrid-value-card">
+              <div class="hybrid-value-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>事業の拡張性</h3>
+              <p>学童からフリースクール、さらに地域課題解決へ。段階的に事業を拡大し、教育×地域の新しいモデルを構築します。</p>
+            </div>
+          </div>
+
+          <!-- モデル図解 -->
+          <div class="hybrid-diagram mb-4">
+            <div class="diagram-stage">
+              <div class="diagram-label">居場所 × 成長</div>
+              <div class="diagram-items">
+                <span class="badge-freeschool">フリースクール</span>
+                <span class="badge-gakudo">学童保育</span>
+              </div>
+            </div>
+            <div class="diagram-arrow">
+              <svg viewBox="0 0 24 24" fill="none" width="32" height="32"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="diagram-stage">
+              <div class="diagram-label">社会接続</div>
+              <div class="diagram-items">
+                <span class="badge-hybrid">地域連携</span>
+                <span class="badge-hybrid">課題解決</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <!-- SECTION 0.5: SPACE DESIGN & TIMELINE -->
+        <div class="theme-wrapper" data-bg="#bae6fd" style="padding: 2rem 0; border-radius: 20px;" id="space-design">
+          <div class="section-header text-center mt-4 mb-4">
+            <h2 class="h2-cyber">空間設計 & 1日のタイムライン</h2>
+            <p class="text-muted">同一拠点を時間帯で分けて運用するハイブリッドモデル</p>
+          </div>
+
+          <!-- タイムライン -->
+          <div class="timeline-section mb-4">
+            <div class="timeline-vertical">
+              <div class="timeline-item" data-type="freeschool">
+                <div class="timeline-time">09:00 - 13:00</div>
+                <div class="timeline-content">
+                  <span class="badge-freeschool">フリースクール</span>
+                  <h4>フリースクールタイム</h4>
+                  <p>不登校支援・個別学習・探求活動。一人ひとりのペースに合わせた学びの時間。</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-type="shared">
+                <div class="timeline-time">13:00 - 14:00</div>
+                <div class="timeline-content">
+                  <span class="badge-hybrid">共有</span>
+                  <h4>ランチ & リフレッシュ</h4>
+                  <p>共有時間。フリースクール生と学童生が交流するきっかけにも。</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-type="gakudo">
+                <div class="timeline-time">14:00 - 19:00</div>
+                <div class="timeline-content">
+                  <span class="badge-gakudo">学童保育</span>
+                  <h4>学童タイム</h4>
+                  <p>放課後の安全な居場所。スキル習得・宿題サポート・クリエイティブ活動。</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-type="staff">
+                <div class="timeline-time">19:00 -</div>
+                <div class="timeline-content">
+                  <span class="badge-cat">スタッフ</span>
+                  <h4>片付け・スタッフミーティング</h4>
+                  <p>翌日の準備、生徒の振り返り共有、運営改善の話し合い。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 空間ゾーニング -->
+          <div class="section-header text-center mb-3">
+            <h3 style="font-size: 1.4rem;">空間ゾーニング</h3>
+            <p class="text-muted">4つのゾーンで多様な活動をサポート</p>
+          </div>
+          <div class="zone-grid">
+            <div class="zone-card zone-creative">
+              <div class="zone-icon">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h4>クリエイティブゾーン</h4>
+              <p>PC・3Dプリンタ・レーザーカッター</p>
+            </div>
+            <div class="zone-card zone-active">
+              <div class="zone-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h4>アクティブゾーン</h4>
+              <p>スポーツ・ボルダリング・ビジョントレーニング</p>
+            </div>
+            <div class="zone-card zone-learning">
+              <div class="zone-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2V3zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7V3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h4>ラーニングゾーン</h4>
+              <p>個別学習・プレゼンテーション・グループワーク</p>
+            </div>
+            <div class="zone-card zone-community">
+              <div class="zone-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h4>コミュニティゾーン</h4>
+              <p>駄菓子屋・交流スペース・ランチエリア</p>
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <!-- SECTION 0.7: PRICING -->
+        <div class="theme-wrapper" data-bg="#fce7f3" style="padding: 2rem 0; border-radius: 20px;" id="pricing">
+          <div class="section-header text-center mt-4 mb-4">
+            <h2 class="h2-cyber">料金形態</h2>
+            <p class="text-muted">ご家庭のライフスタイルに合わせた柔軟なプラン ※料金は予定価格です</p>
+          </div>
+
+          <div class="pricing-grid mb-4">
+            <!-- 学童保育コース -->
+            <div class="pricing-card">
+              <div class="pricing-header pricing-header-gakudo">
+                <span class="badge-gakudo">学童保育</span>
+                <h3>学童保育コース</h3>
+                <p>放課後の安全な居場所 + スキル習得</p>
+              </div>
+              <div class="pricing-body">
+                <div class="pricing-plan">
+                  <div class="plan-name">週5 レギュラー</div>
+                  <div class="plan-price">月額 <strong>45,000</strong>円</div>
+                </div>
+                <div class="pricing-plan">
+                  <div class="plan-name">週3 ライト</div>
+                  <div class="plan-price">月額 <strong>30,000</strong>円</div>
+                </div>
+                <div class="pricing-plan">
+                  <div class="plan-name">スポット利用</div>
+                  <div class="plan-price">1日 <strong>5,000</strong>円</div>
+                </div>
+                <div class="pricing-note">入会金: 15,000円</div>
+              </div>
+            </div>
+
+            <!-- フリースクールコース -->
+            <div class="pricing-card pricing-card-recommended">
+              <div class="pricing-recommended-label">RECOMMENDED</div>
+              <div class="pricing-header pricing-header-freeschool">
+                <span class="badge-freeschool">フリースクール</span>
+                <h3>フリースクールコース</h3>
+                <p>一人ひとりに寄り添う学びの場</p>
+              </div>
+              <div class="pricing-body">
+                <div class="pricing-plan">
+                  <div class="plan-name">週5 フル</div>
+                  <div class="plan-price">月額 <strong>55,000</strong>円</div>
+                </div>
+                <div class="pricing-plan">
+                  <div class="plan-name">週3 スタンダード</div>
+                  <div class="plan-price">月額 <strong>38,000</strong>円</div>
+                </div>
+                <div class="pricing-plan">
+                  <div class="plan-name">週1 トライアル</div>
+                  <div class="plan-price">月額 <strong>15,000</strong>円</div>
+                </div>
+                <div class="pricing-note">入会金: 15,000円</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 共通オプション -->
+          <div class="section-header text-center mb-3">
+            <h3 style="font-size: 1.4rem;">共通オプション</h3>
+          </div>
+          <div class="options-grid">
+            <div class="option-item">
+              <span class="badge-tech">Tech</span>
+              <span class="option-name">Vibe Coding 特別講座</span>
+              <span class="option-price">+8,000円/月</span>
+            </div>
+            <div class="option-item">
+              <span class="badge-sports">Sports</span>
+              <span class="option-name">eスポーツ特別講座</span>
+              <span class="option-price">+5,000円/月</span>
+            </div>
+            <div class="option-item">
+              <span class="badge-hybrid">送迎</span>
+              <span class="option-name">送迎サービス</span>
+              <span class="option-price">+8,000円/月</span>
+            </div>
+            <div class="option-item">
+              <span class="badge-hybrid">食事</span>
+              <span class="option-name">食事提供</span>
+              <span class="option-price">+6,000円/月</span>
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
         <!-- SECTION 1: TECH -->
         <div class="theme-wrapper" data-bg="#bfdbfe" style="padding: 2rem 0; border-radius: 20px;">
           <div class="overlay-layout mb-4">
@@ -236,24 +467,29 @@
           
           <div class="catalog-grid" style="gap: 1.5rem;">
             <div class="catalog-item glass-card text-center" style="padding: 2rem;">
-              <h3 class="gradient-tech" style="font-size:1.5rem">Phase 0</h3>
+              <h3 class="gradient-hybrid" style="font-size:1.5rem">Phase 0</h3>
               <h4 class="mb-2">教室開設・基盤構築</h4>
-              <p class="text-muted" style="font-size:0.9rem">事業計画策定、物件選定、<br>ホームページ制作、認知活動（現在）</p>
+              <p class="text-muted" style="font-size:0.9rem">事業計画策定、物件選定、<br>ホームページ制作、認知活動<br><strong>（現在）</strong></p>
             </div>
             <div class="catalog-item glass-card text-center" style="padding: 2rem;">
               <h3 class="gradient-sports" style="font-size:1.5rem">Phase 1</h3>
-              <h4 class="mb-2">次世代型・学童への展開</h4>
-              <p class="text-muted" style="font-size:0.9rem">共働き世帯の課題解決。<br>単なる預かりではなく「スキルが身につく学童」として機能。</p>
+              <h4 class="mb-2">学童保育スタート</h4>
+              <p class="text-muted" style="font-size:0.9rem">収益・運営基盤の確立。<br>共働き世帯の課題解決。「スキルが身につく学童」として差別化。</p>
             </div>
             <div class="catalog-item glass-card text-center" style="padding: 2rem;">
               <h3 class="gradient-tech" style="font-size:1.5rem">Phase 2</h3>
-              <h4 class="mb-2">「出席扱い」拠点の確立</h4>
-              <p class="text-muted" style="font-size:0.9rem">学校の新しい学びの場。<br>ITを活用し学習履歴を可視化、校長連携フローの構築。</p>
+              <h4 class="mb-2">フリースクール段階的開始</h4>
+              <p class="text-muted" style="font-size:0.9rem">週1-2日で小規模スタート。<br>不登校の子どもたちへ「居場所」を提供し、段階的に拡大。</p>
             </div>
             <div class="catalog-item glass-card text-center" style="padding: 2rem;">
-              <h3 class="gradient-biz" style="font-size:1.5rem">Phase 3</h3>
-              <h4 class="mb-2">教育 × M&Aモデル</h4>
-              <p class="text-muted" style="font-size:0.9rem">地域経済の担い手育成。<br>廃業危機の老舗店舗とのコラボや事業承継を通じた教育拡張。</p>
+              <h3 class="gradient-hybrid" style="font-size:1.5rem">Phase 3</h3>
+              <h4 class="mb-2">「出席扱い」拠点確立</h4>
+              <p class="text-muted" style="font-size:0.9rem">ITを活用し学習履歴を可視化。<br>校長連携フローの構築。学校との信頼関係を醸成。</p>
+            </div>
+            <div class="catalog-item glass-card text-center" style="padding: 2rem;">
+              <h3 class="gradient-biz" style="font-size:1.5rem">Phase 4</h3>
+              <h4 class="mb-2">教育 × 地域課題解決モデル</h4>
+              <p class="text-muted" style="font-size:0.9rem">M&A・事業承継を通じた教育拡張。<br>地域経済の担い手育成と持続可能な事業モデルの確立。</p>
             </div>
           </div>
         </div>
