@@ -616,6 +616,27 @@ h1, h2, h3, h4 {
   line-height: 1.5;
 }
 
+/* Card Image Wrapper (for Hybrid, Zone, Pricing cards) */
+.card-img-wrapper {
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f1f5f9;
+  margin-bottom: 1rem;
+}
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.hybrid-value-card:hover .card-img-wrapper img,
+.zone-card:hover .card-img-wrapper img,
+.pricing-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
 .badge-tech {
   background: rgba(14, 165, 233, 0.1);
   color: var(--color-tech);
@@ -1128,6 +1149,14 @@ h1, h2, h3, h4 {
   overflow: hidden;
   transition: 0.3s;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card .card-img-wrapper {
+  border-radius: 0;
+  height: 180px;
+  margin-bottom: 0;
 }
 
 .pricing-card:hover {
@@ -1154,7 +1183,7 @@ h1, h2, h3, h4 {
 }
 
 .pricing-header {
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
 }
 
