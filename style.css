@@ -441,6 +441,29 @@ h1, h2, h3, h4 {
   gap: 2rem;
 }
 
+/* Roadmap: 5 step cards laid out evenly */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.roadmap-grid > .catalog-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.5rem 1rem;
+}
+@media (max-width: 1180px) {
+  .roadmap-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .roadmap-grid { grid-template-columns: 1fr; }
+}
+
 .catalog-grid.justify-center {
   display: flex;
   flex-wrap: wrap;
