@@ -120,14 +120,25 @@ function saveData(key, data) {
 
 // --- 4. Task Management ---
 (function initTasks() {
-  const KEY = 'tasa_tasks_v5';
+  const KEY = 'tasa_tasks_v6';
   const DEF = [
-    { id: 1, name: '共同出資者への事業プラン共有と賛同獲得', cat: '事業準備', pri: 'high', status: 'prog' },
-    { id: 2, name: 'Vibe Codingワークフロー(MCP+Claude)の構築', cat: 'カリキュラム', pri: 'high', status: 'todo' },
-    { id: 3, name: 'ゲーミングPC・3Dプリンタ等の購入見積もり', cat: '事業準備', pri: 'high', status: 'todo' },
-    { id: 4, name: 'ビジョントレーニング＆リアクションライト設置設計', cat: '事業準備', pri: 'medium', status: 'todo' },
-    { id: 5, name: '生徒運営 駄菓子屋のモデル設計と仕入れルート確保', cat: '事業準備', pri: 'medium', status: 'todo' },
-    { id: 6, name: '配信スタジオ(YouTube等)の防音・機材テスト', cat: '集客・マーケティング', pri: 'medium', status: 'todo' }
+    // STEP 1: フリースクール開校（最小構成）
+    { id: 1, name: '【STEP1】共同出資者向け 最小開設プラン提示資料の確定', cat: '事業準備', pri: 'high', status: 'prog' },
+    { id: 2, name: '【STEP1】開校時の収支シミュレーション（フリースクール単独）', cat: '事業準備', pri: 'high', status: 'todo' },
+    { id: 3, name: '【STEP1】物件選定（PC20台＋運動スペースが入る広さ）', cat: '事業準備', pri: 'high', status: 'todo' },
+    { id: 4, name: '【STEP1】PC20台・3Dプリンタ2台の見積もり取得', cat: '事業準備', pri: 'high', status: 'todo' },
+    { id: 5, name: '【STEP1】ボルダリング壁／サンドバッグ／ストラックアウト設置プラン', cat: '事業準備', pri: 'medium', status: 'todo' },
+    { id: 6, name: '【STEP1】Vibe Coding（MCP+Claude Code）環境セットアップ手順書', cat: 'カリキュラム', pri: 'high', status: 'todo' },
+    { id: 7, name: '【STEP1】フリースクール料金プラン（週1/週3/週5）の最終決定', cat: '事業準備', pri: 'high', status: 'todo' },
+    { id: 8, name: '【STEP1】不登校支援に関する保険・安全管理マニュアル整備', cat: '法務・許認可', pri: 'high', status: 'todo' },
+    { id: 9, name: '【STEP1】開校時スタッフ（フリースクール担当）の採用計画', cat: '人材', pri: 'high', status: 'todo' },
+    { id: 10, name: '【STEP1】体験会・説明会の告知と運営フロー作成', cat: '集客・マーケティング', pri: 'medium', status: 'todo' },
+    // STEP 2: 学童併設
+    { id: 11, name: '【STEP2】学童保育の許認可要件・自治体補助金の調査', cat: '法務・許認可', pri: 'medium', status: 'todo' },
+    { id: 12, name: '【STEP2】学童併設時の追加スタッフ・追加備品の試算', cat: '事業準備', pri: 'low', status: 'todo' },
+    // STEP 3: 出席扱い
+    { id: 13, name: '【STEP3】出席扱い認定要件（文科省ガイドライン）の調査', cat: '法務・許認可', pri: 'low', status: 'todo' },
+    { id: 14, name: '【STEP3】学習履歴の可視化システム設計（Vibe Codingで内製）', cat: 'カリキュラム', pri: 'low', status: 'todo' }
   ];
   let tasks = loadData(KEY, DEF);
   let currentFilter = 'all';
@@ -222,14 +233,25 @@ function saveData(key, data) {
 
 // --- 5. Equipment Management ---
 (function initEquipment() {
-  const KEY = 'tasa_equip_v5';
+  const KEY = 'tasa_equip_v6';
   const DEF = [
-    { id: 1, name: 'ゲーミング＆開発兼用PC', cat: 'IT機器', qty: '20', reason: 'クリエイティブソフトやUnityをノンストレスで動かすベース環境', status: 'need' },
-    { id: 2, name: '3Dプリンター / レーザーカッター', cat: 'デジタルファブリケーション', qty: '各2台', reason: '作成した3Dデータや基板を物理プロトタイプ化するため', status: 'need' },
-    { id: 3, name: 'eスポーツ/配信機材セット', cat: 'スタジオ・eスポーツ', qty: '1式', reason: '動画プロモーション実践やeスポーツ大会ノウハウの蓄積', status: 'need' },
-    { id: 4, name: 'ビジョントレーニングボード', cat: 'スポーツ・運動', qty: '1面', reason: '周辺視野と動体視力向上によるワーキングメモリ拡張', status: 'need' },
-    { id: 5, name: 'インタラクティブ・リアクションライト', cat: 'スポーツ・運動', qty: '2セット', reason: '判断力と敏捷性の向上。AIプログラミングと連動した測定に', status: 'need' },
-    { id: 6, name: '駄菓子屋ショーケース・POSレジ端末', cat: '施設・家具', qty: '1式', reason: 'リアルな店舗運営を通した販売・在庫管理・収益化モデル実践', status: 'need' }
+    // === STEP 1：フリースクール開校時に必要な最小構成 ===
+    { id: 1, name: '【STEP1】生徒・開発兼用PC', cat: 'IT機器', qty: '20台', reason: 'テクノロジー特化の主軸。Vibe Coding／3Dモデリング／動画編集を快適に動かす開校時の必須装備', status: 'need' },
+    { id: 2, name: '【STEP1】モニター・周辺機器一式（キーボード/マウス/ヘッドセット）', cat: 'IT機器', qty: '20席分', reason: 'PC20台分の作業環境を整備', status: 'need' },
+    { id: 3, name: '【STEP1】高速インターネット回線・業務用ルーター', cat: 'IT機器', qty: '1式', reason: '20台同時接続でAI／クラウド開発に支障が出ない通信環境', status: 'need' },
+    { id: 4, name: '【STEP1】3Dプリンター', cat: 'デジタルファブリケーション', qty: '2台', reason: '作ったデータをすぐ物理化できる体験を提供。開校時の差別化装備', status: 'need' },
+    { id: 5, name: '【STEP1】3Dプリンタ用フィラメント・消耗品', cat: 'デジタルファブリケーション', qty: '初期セット', reason: '稼働開始からの数か月分の材料費', status: 'need' },
+    { id: 6, name: '【STEP1】ボルダリングウォール（低めの壁＋マット）', cat: 'スポーツ・運動', qty: '1面', reason: '省スペースで設置可能なリフレッシュ用クライミング設備', status: 'need' },
+    { id: 7, name: '【STEP1】サンドバッグ（スタンド型 or 吊り下げ）', cat: 'スポーツ・運動', qty: '1〜2台', reason: 'ストレス発散の最短装置。技術指導不要で誰でも使える', status: 'need' },
+    { id: 8, name: '【STEP1】ストラックアウト的＋柔らかいボール各種', cat: 'スポーツ・運動', qty: '1セット', reason: '一人でも複数でも遊べる的当て＋球技用具。リフレッシュ目的', status: 'need' },
+    { id: 9, name: '【STEP1】運動マット・防音／防振マット', cat: 'スポーツ・運動', qty: '必要面積分', reason: '安全確保と階下への騒音／振動対策', status: 'need' },
+    { id: 10, name: '【STEP1】物件（賃貸）', cat: '施設・家具', qty: '1拠点', reason: 'PC20台のクリエイティブゾーン＋運動ゾーンが収まる広さ', status: 'need' },
+    { id: 11, name: '【STEP1】デスク・椅子（生徒用＋スタッフ用）', cat: '施設・家具', qty: '20席+α', reason: '長時間PC作業に耐える基本家具', status: 'need' },
+    { id: 12, name: '【STEP1】収納・パーテーション・看板', cat: '施設・家具', qty: '1式', reason: '備品収納とゾーン分け、対外的な認知のための最低限の什器', status: 'need' },
+    // === STEP 2 以降に追加検討 ===
+    { id: 13, name: '【STEP2+】学童併設用 追加備品（おやつ／軽食設備等）', cat: '施設・家具', qty: '-', reason: '学童保育併設フェーズで追加投資。STEP1時点では不要', status: 'need' },
+    { id: 14, name: '【将来】レーザーカッター', cat: 'デジタルファブリケーション', qty: '1台', reason: '需要が出てから追加投資。STEP1の最小構成からは除外', status: 'need' },
+    { id: 15, name: '【将来】eスポーツ／配信スタジオ機材', cat: 'スタジオ・eスポーツ', qty: '1式', reason: '生徒の興味と運営余力を見て段階的に導入', status: 'need' }
   ];
   let items = loadData(KEY, DEF);
   let currentFilter = 'all';
@@ -431,7 +453,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await delay(300);
 
   // Step 5: Desc paragraph
-  const descLines = ["学童保育の安定した基盤の上に、", "フリースクールの社会的意義を重ね合わせた新しい教育モデル。"];
+  const descLines = ["まずはフリースクールとして、小さく確実に開校。", "段階的に学童・出席扱い拠点へ拡張する3ステップモデル。"];
   for(let i=0; i<descLines.length; i++) {
       const lineSpan = document.createElement('span');
       descEl.appendChild(lineSpan);
